@@ -1,0 +1,55 @@
+/* Custom Designer Info Section */
+.designer-info-section {
+  padding: 20px;
+  background-color: #000000;  /* Dark background (charcoal blue) */
+  border: 1px solid #34495e;  /* Slightly lighter border for depth */
+  margin: 20px 0;
+  border-radius: 8px;  /* Rounded corners for a modern look */
+}
+
+/* Heading Styles */
+.designer-info-section h3 {
+  font-size: 1.25em;
+  color: #ecf0f1;  /* Light color for the headings to stand out on dark background */
+  margin-bottom: 10px;
+}
+
+/* Paragraph Styles */
+.designer-info-section p {
+  font-size: 1em;
+  color: #bdc3c7;  /* Lighter text color for body text */
+  margin: 10px 0;
+}
+
+/* Add spacing between different sections */
+.designer-info-section .designer-name,
+.designer-info-section .designer-country,
+.designer-info-section .designer-experience,
+.designer-info-section .designer-bio {
+  margin-bottom: 20px;
+}
+
+/* Section Header Styling */
+.designer-info-section .designer-name h3,
+.designer-info-section .designer-country h3,
+.designer-info-section .designer-experience h3,
+.designer-info-section .designer-bio h3
+{
+  color: #3498db; /* Light blue for section headers */
+}
+
+/* Bio Section Styling */
+.designer-info-section .designer-bio {
+  font-style: italic;
+  color: #95a5a6;  /* Lighter gray for the bio text */
+}
+
+/* Styling for the country flag image */
+.country-flag {
+  width: 36px;
+  height: 28px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+
