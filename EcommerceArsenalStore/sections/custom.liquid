@@ -1,0 +1,96 @@
+{% schema %}
+{
+  "name": "Custom Designer Info",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Name of the Designer",
+      "id": "designer_name",
+      "info": "Enter the name of the designer."
+    },
+    {
+      "type": "select",
+      "label": "Country",
+      "id": "designer_country",
+      "options": [
+        {
+          "value": "Pakistan",
+          "label": "Pakistan"
+        },
+        {
+          "value": "Falasteen",
+          "label": "Falasteen"
+        },
+        {
+          "value": "UK",
+          "label": "United Kingdom"
+        }
+      ],
+      "default": "Pakistan",
+      "info": "Select the country of the designer."
+    },
+    {
+      "type": "number",
+      "label": "Experience in Years",
+      "id": "designer_experience",
+      "info": "Enter the years of experience of the designer."
+    },
+    {
+      "type": "textarea",
+      "label": "Short Bio",
+      "id": "designer_bio",
+      "info": "Provide a short biography of the designer."
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Designer's Bio",
+      "id": "show_bio",
+      "default": true,
+      "info": "Check this box to display the designer's bio on the page."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Designer Info",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="designer-info-section">
+  <div class="designer-name">
+    <h3>Name of the Designer:</h3>
+    <p>{{ section.settings.designer_name }}</p>
+  </div>
+
+  <div class="designer-country">
+    <h3>Country:</h3>
+    <p>
+      {% assign country_code = "" %}
+      {% if section.settings.designer_country == "Pakistan" %}
+        {% assign country_code = "pk" %}
+      {% elsif section.settings.designer_country == "Falasteen" %}
+        {% assign country_code = "ps" %}
+      {% elsif section.settings.designer_country == "UK" %}
+        {% assign country_code = "gb" %}
+      {% endif %}
+      
+      <!-- Fetch Flag Image from Flagpedia -->
+      <img src="https://flagpedia.net/data/flags/h80/{{ country_code }}.png" alt="{{ section.settings.designer_country }} Flag" class="country-flag" />
+      {{ section.settings.designer_country }}
+    </p>
+  </div>
+
+  <div class="designer-experience">
+    <h3>Experience in Years:</h3>
+    <p>{{ section.settings.designer_experience }} years</p>
+  </div>
+
+  {% if section.settings.show_bio %}
+  <div class="designer-bio">
+    <h3>Short Bio:</h3>
+    <p>{{ section.settings.designer_bio }}</p>
+  </div>
+  {% endif %}
+</div>
